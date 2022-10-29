@@ -1,7 +1,7 @@
 import React from "react";
 import { PAGES } from "./AppConstants";
 
-export default function Navigation({ useStateVar }) {
+export default function Navigation({ usePage }) {
   return (
     <div
       style={{
@@ -18,7 +18,7 @@ export default function Navigation({ useStateVar }) {
         <div
           style={{ margin: "10px", cursor: "pointer", alignSelf: "flex-end" }}
           onClick={() => {
-            useStateVar[1]({ currentPage: PAGES.HOME });
+            usePage[1](PAGES.HOME);
           }}
         >
           Home
@@ -26,7 +26,7 @@ export default function Navigation({ useStateVar }) {
         <div
           style={{ margin: "10px", cursor: "pointer", alignSelf: "flex-end" }}
           onClick={() => {
-            useStateVar[1]({ currentPage: PAGES.STUDENT_FORM });
+            usePage[1](PAGES.STUDENT_FORM);
           }}
         >
           Student Form
@@ -34,7 +34,7 @@ export default function Navigation({ useStateVar }) {
         <div
           style={{ margin: "10px", cursor: "pointer", alignSelf: "flex-end" }}
           onClick={() => {
-            useStateVar[1]({ currentPage: PAGES.STUDENT_VACCINE_DETAILS });
+            usePage[1](PAGES.STUDENT_VACCINE_DETAILS);
           }}
         >
           Student Vaccine Details
