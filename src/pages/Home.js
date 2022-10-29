@@ -14,7 +14,18 @@ export default function Home() {
   }, []);
 
   if (!landingData) {
-    return <div>Loading...</div>;
+    return (
+      <div
+        style={{
+          height: "500px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        Loading...
+      </div>
+    );
   }
 
   return (
@@ -25,7 +36,7 @@ export default function Home() {
         Upcoming Vaccine Drives:{" "}
         {landingData.upcomingVaccineDrives.length > 0
           ? landingData.upcomingVaccineDrives
-          : "No Dirves"}
+          : "No Vaccination Drives"}
       </div>
     </div>
   );

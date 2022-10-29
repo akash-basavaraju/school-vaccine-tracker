@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PAGES } from "./components/AppConstants";
 import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import StudentForm from "./pages/StudentForm";
 import StudentVaccineDetails from "./pages/StudentVaccineDetails";
 import Parse from "parse/dist/parse.min.js";
-import { addLandingdData } from "./service/service";
 
 // Your Parse initialization configuration goes here
 const PARSE_APPLICATION_ID = "9yXtmOWsjNXylNrpvoij55n5cVcjbQufTBR6SCWB";

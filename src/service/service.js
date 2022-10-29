@@ -15,9 +15,23 @@ export async function fetchLandingData() {
 
   const landingdDataObj = await query.first();
 
-  return {
-    studentsRegistered: landingdDataObj.get("studentsRegistered"),
-    studentsVaccinated: landingdDataObj.get("studentsVaccinated"),
-    upcomingVaccineDrives: landingdDataObj.get("upcomingVaccineDrives"),
-  };
+  return { ...landingdDataObj.attributes };
+}
+
+export async function addStudentFormData(data) {
+  const studentFormObj = new Parse.Object("StudentForm");
+
+  studentFormObj.set("studentName", data.studentName);
+  studentFormObj.set("studentClass", data.studentClass);
+  studentFormObj.set("isVaccinated", data.isVaccinated);
+
+  await studentFormObj.save();
+}
+
+export async function fetchStudentFormData() {
+  const query = new Parse.Query("StudentForm");
+
+  const studentFormData = await query.find();
+
+  return studentFormData.map((data) => ({ ...data.attributes }));
 }
