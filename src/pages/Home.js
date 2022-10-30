@@ -29,7 +29,17 @@ export default function Home() {
   }
 
   return (
-    <div style={{ textAlign: "center", padding: "200px", lineHeight: "3" }}>
+    <div
+      style={{
+        textAlign: "center",
+        height: "500px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        lineHeight: "3",
+        flexDirection: "column",
+      }}
+    >
       <div>Students Registered: {landingData.studentsRegistered}</div>
       <div>Students Vaccinated: {landingData.studentsVaccinated}</div>
       <div>

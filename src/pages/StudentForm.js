@@ -33,7 +33,18 @@ export default function StudentForm() {
   }
 
   return (
-    <div style={{ textAlign: "center", padding: "200px", lineHeight: "2" }}>
+    <div
+      style={{
+        textAlign: "center",
+        height: "500px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        lineHeight: "3",
+        flexDirection: "column",
+        lineHeight: "2",
+      }}
+    >
       <div>Student Form</div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
