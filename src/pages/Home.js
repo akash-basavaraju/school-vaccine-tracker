@@ -40,10 +40,22 @@ export default function Home() {
         flexDirection: "column",
       }}
     >
-      <div>Students Registered: {landingData.studentsRegistered}</div>
-      <div>Students Vaccinated: {landingData.studentsVaccinated}</div>
       <div>
-        Upcoming Vaccine Drives:{" "}
+        <span style={{ fontSize: "22px", fontWeight: "600" }}>
+          Students Registered:
+        </span>{" "}
+        {landingData.studentsRegistered}
+      </div>
+      <div>
+        <span style={{ fontSize: "22px", fontWeight: "600" }}>
+          Students Vaccinated:
+        </span>{" "}
+        {landingData.studentsVaccinated}
+      </div>
+      <div>
+        <span style={{ fontSize: "22px", fontWeight: "600" }}>
+          Upcoming Vaccine Drives:
+        </span>{" "}
         {landingData.upcomingVaccineDrives.length > 0
           ? landingData.upcomingVaccineDrives
           : "No Vaccination Drives"}

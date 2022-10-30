@@ -1,7 +1,7 @@
 import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
 import { TABLE_COLUMNS } from "../components/AppConstants";
-import { downloadCsv, makeCsv } from "../components/CSVParser";
+import { downloadCsv, makeCsv } from "../components/CSVGenerator";
 import { fetchStudentFormData } from "../service/service";
 
 export default function StudentVaccineDetails() {
@@ -53,7 +53,9 @@ export default function StudentVaccineDetails() {
           alignItems: "center",
         }}
       >
-        Student Vaccine Details
+        <div style={{ fontSize: "22px", fontWeight: "700" }}>
+          Student Vaccine Details
+        </div>
         <button type="button" onClick={makeAndDownloadCSV}>
           Download as CSV
         </button>

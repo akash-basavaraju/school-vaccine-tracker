@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { readCSV } from "../components/CSVParser";
 import { addStudentFormData } from "../service/service";
 
 export default function StudentForm() {
@@ -44,7 +45,7 @@ export default function StudentForm() {
         lineHeight: "2",
       }}
     >
-      <div>Student Form</div>
+      <div style={{ fontSize: "22px", fontWeight: "700" }}>Student Form</div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           Student Name:{" "}
@@ -80,6 +81,20 @@ export default function StudentForm() {
           <input type="submit" />
         </div>
       </form>
+      {/* <div>
+        <div style={{ fontSize: "22px", fontWeight: "700" }}>OR</div>
+        <div>Upload a CSV file</div>
+        <input
+          id="fileForUpload"
+          type="file"
+          onChange={async () => {
+            const file = document.getElementById("fileForUpload").files[0];
+            const data = await readCSV(file);
+            console.log(data);
+          }}
+          accept=".csv"
+        />
+      </div> */}
     </div>
   );
 }
