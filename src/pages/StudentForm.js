@@ -40,7 +40,6 @@ export default function StudentForm() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        lineHeight: "3",
         flexDirection: "column",
         lineHeight: "2",
       }}
