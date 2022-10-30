@@ -7,9 +7,9 @@ import StudentVaccineDetails from "./pages/StudentVaccineDetails";
 import Parse from "parse/dist/parse.min.js";
 
 // Your Parse initialization configuration goes here
-const PARSE_APPLICATION_ID = "9yXtmOWsjNXylNrpvoij55n5cVcjbQufTBR6SCWB";
+const PARSE_APPLICATION_ID = "yealdikNjmFTUtnmzM7qeJALvIH8XVH3V0t1Gniw";
 const PARSE_HOST_URL = "https://parseapi.back4app.com";
-const PARSE_JAVASCRIPT_KEY = "mGS02Qyx9vTWv7QtrMMcZ1K5A2HGGQGel8ksqWYV";
+const PARSE_JAVASCRIPT_KEY = "mx3ULBhrpJNNvCkFpGXSN0wC37LbZMvNSJ6HM6gV";
 Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 Parse.serverURL = PARSE_HOST_URL;
 
