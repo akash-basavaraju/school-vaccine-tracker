@@ -21,7 +21,7 @@ export default function StudentForm() {
     return (
       <div
         style={{
-          height: "500px",
+          height: "600px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -36,7 +36,7 @@ export default function StudentForm() {
     <div
       style={{
         textAlign: "center",
-        height: "500px",
+        height: "600px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

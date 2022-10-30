@@ -19,7 +19,7 @@ export default function StudentVaccineDetails() {
     return (
       <div
         style={{
-          height: "500px",
+          height: "600px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -31,7 +31,14 @@ export default function StudentVaccineDetails() {
   }
 
   return (
-    <div style={{ textAlign: "center", padding: "20px", lineHeight: "3" }}>
+    <div
+      style={{
+        height: "600px",
+        textAlign: "center",
+        padding: "20px",
+        lineHeight: "3",
+      }}
+    >
       Student Vaccine Details
       <MaterialTable
         columns={TABLE_COLUMNS}

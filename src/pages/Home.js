@@ -17,7 +17,7 @@ export default function Home() {
     return (
       <div
         style={{
-          height: "500px",
+          height: "600px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -32,7 +32,7 @@ export default function Home() {
     <div
       style={{
         textAlign: "center",
-        height: "500px",
+        height: "600px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
