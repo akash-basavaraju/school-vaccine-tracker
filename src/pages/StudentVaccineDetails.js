@@ -9,7 +9,7 @@ export default function StudentVaccineDetails() {
   useEffect(() => {
     const getStudentFormData = async () => {
       const data = await fetchStudentFormData();
-      console.log(data);
+
       setStudentFormData(data);
     };
     getStudentFormData();
