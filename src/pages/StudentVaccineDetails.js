@@ -1,6 +1,7 @@
 import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
 import { TABLE_COLUMNS } from "../components/AppConstants";
+import { downloadCsv, makeCsv } from "../components/CSVParser";
 import { fetchStudentFormData } from "../service/service";
 
 export default function StudentVaccineDetails() {
@@ -14,6 +15,12 @@ export default function StudentVaccineDetails() {
     };
     getStudentFormData();
   }, []);
+
+  const makeAndDownloadCSV = () => {
+    const csvData = makeCsv(studentFormData);
+    console.log(JSON.stringify(studentFormData));
+    downloadCsv(csvData);
+  };
 
   if (!studentFormData) {
     return (
@@ -39,7 +46,18 @@ export default function StudentVaccineDetails() {
         lineHeight: "3",
       }}
     >
-      Student Vaccine Details
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        Student Vaccine Details
+        <button type="button" onClick={makeAndDownloadCSV}>
+          Download as CSV
+        </button>
+      </div>
       <MaterialTable
         columns={TABLE_COLUMNS}
         data={studentFormData}
