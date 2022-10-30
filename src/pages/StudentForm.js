@@ -18,6 +18,26 @@ export default function StudentForm() {
     alert("Submission Completed!");
   };
 
+  const handleCSVUpload = async () => {
+    const file = document.getElementById("fileForUpload").files[0];
+    const data = await readCSV(file);
+    const rows = data.split("\n");
+    console.log(rows);
+    rows.forEach(async (row, index) => {
+      if (row !== "" && index !== 0) {
+        const values = row.split(",");
+        console.log(values);
+        await addStudentFormData({
+          studentName: values[0],
+          studentClass: values[1],
+          isVaccinated: values[2] === "true" ? true : false,
+          vaccineDate: values[3],
+        });
+      }
+    });
+    alert("Submission Completed!");
+  };
+
   if (isSubmitting) {
     return (
       <div
@@ -78,20 +98,16 @@ export default function StudentForm() {
           <input type="submit" />
         </div>
       </form>
-      {/* <div>
+      <div>
         <div style={{ fontSize: "22px", fontWeight: "700" }}>OR</div>
         <div>Upload a CSV file</div>
         <input
           id="fileForUpload"
           type="file"
-          onChange={async () => {
-            const file = document.getElementById("fileForUpload").files[0];
-            const data = await readCSV(file);
-            console.log(data);
-          }}
+          onChange={handleCSVUpload}
           accept=".csv"
         />
-      </div> */}
+      </div>
     </div>
   );
 }

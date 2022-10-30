@@ -24,7 +24,7 @@ export const makeCsv = function (objArray) {
     }
   }
 
-  str += "\r\n";
+  str += "\n";
 
   for (var i = 0; i < array.length; i++) {
     var line = "";
@@ -36,7 +36,7 @@ export const makeCsv = function (objArray) {
       }
     }
 
-    str += line + "\r\n";
+    str += line + "\n";
   }
 
   return str;

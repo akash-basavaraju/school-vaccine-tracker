@@ -6,9 +6,17 @@ export async function readCSV(file) {
     }
 
     const reader = new FileReader();
-    reader.onload = (event) => {
-      resolve(event.target.result);
-    };
-    reader.readAsDataURL(file);
+
+    reader.addEventListener(
+      "load",
+      () => {
+        resolve(reader.result);
+      },
+      false
+    );
+
+    if (file) {
+      reader.readAsText(file);
+    }
   });
 }
