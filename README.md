@@ -1,10 +1,14 @@
 # School Vaccine Tracking App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is deployed at [https://school-vaccine-tracker.netlify.app/](https://school-vaccine-tracker.netlify.app/).
 
 ## Scripts to Run
 
 In the project directory, you can run:
+
+### `yarn`
+
+To get the required libraries to the repo.\
 
 ### `yarn start`
 
