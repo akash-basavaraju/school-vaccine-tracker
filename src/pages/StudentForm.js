@@ -70,12 +70,9 @@ export default function StudentForm() {
         <div>
           Student Vaccinated:{" "}
           <input {...register("isVaccinated")} type="checkbox" />
-          <br />
-          {errors.isVaccinated && (
-            <span style={{ color: "red", lineHeight: "0", fontSize: "12px" }}>
-              This field is required
-            </span>
-          )}
+        </div>
+        <div>
+          Vaccination Date: <input {...register("vaccineDate")} type="date" />
         </div>
         <div>
           <input type="submit" />

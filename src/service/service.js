@@ -22,6 +22,7 @@ export async function addStudentFormData(data) {
   studentFormObj.set("studentName", data.studentName);
   studentFormObj.set("studentClass", data.studentClass);
   studentFormObj.set("isVaccinated", data.isVaccinated);
+  studentFormObj.set("vaccineDate", data.vaccineDate);
 
   await studentFormObj.save();
 }

@@ -8,4 +8,5 @@ export const TABLE_COLUMNS = [
   { title: "Student Name", field: "studentName" },
   { title: "Student Class", field: "studentClass" },
   { title: "Student Vaccination Status", field: "isVaccinated" },
+  { title: "Student Vaccination Date", field: "vaccineDate" },
 ];
