@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { fetchLandingData } from "../service/service";
+import { fetchLandingData, fetchStudentFormData } from "../service/service";
 
 export default function Home() {
   const [landingData, setLandinData] = useState();
+  const [noOfStudents, setNoOfStudents] = useState();
+  const [studentsVaccinated, setStudentsVaccinated] = useState();
 
   useEffect(() => {
     const getLandingData = async () => {
@@ -11,6 +13,13 @@ export default function Home() {
     };
 
     getLandingData();
+
+    const getStudentFormData = async () => {
+      const data = await fetchStudentFormData();
+      setNoOfStudents(data.length);
+      setStudentsVaccinated(data.filter((a) => a.isVaccinated).length);
+    };
+    getStudentFormData();
   }, []);
 
   if (!landingData) {
@@ -44,13 +53,13 @@ export default function Home() {
         <span style={{ fontSize: "22px", fontWeight: "600" }}>
           Students Registered:
         </span>{" "}
-        {landingData.studentsRegistered}
+        {noOfStudents}
       </div>
       <div>
         <span style={{ fontSize: "22px", fontWeight: "600" }}>
           Students Vaccinated:
         </span>{" "}
-        {landingData.studentsVaccinated}
+        {studentsVaccinated}
       </div>
       <div>
         <span style={{ fontSize: "22px", fontWeight: "600" }}>

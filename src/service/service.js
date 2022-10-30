@@ -3,8 +3,6 @@ import Parse from "parse/dist/parse.min.js";
 export async function addLandingdData() {
   const landingdDataObj = new Parse.Object("LandingdData");
 
-  landingdDataObj.set("studentsRegistered", "200");
-  landingdDataObj.set("studentsVaccinated", "50");
   landingdDataObj.set("upcomingVaccineDrives", []);
 
   await landingdDataObj.save();
