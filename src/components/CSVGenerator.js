@@ -13,10 +13,10 @@ export const downloadCsv = function (data) {
 };
 
 export const makeCsv = function (objArray) {
-  var array = typeof objArray != "object" ? JSON.parse(objArray) : objArray;
-  var str = "";
+  let array = typeof objArray != "object" ? JSON.parse(objArray) : objArray;
+  let str = "";
 
-  for (var index in array[0]) {
+  for (let index in array[0]) {
     if (typeof array[0][index] !== "object") {
       if (str !== "") str += ",";
 
@@ -26,9 +26,9 @@ export const makeCsv = function (objArray) {
 
   str += "\n";
 
-  for (var i = 0; i < array.length; i++) {
-    var line = "";
-    for (var index in array[i]) {
+  for (let i = 0; i < array.length; i++) {
+    let line = "";
+    for (let index in array[i]) {
       if (typeof array[i][index] !== "object") {
         if (line !== "") line += ",";
 
