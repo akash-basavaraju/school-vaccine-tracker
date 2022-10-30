@@ -8,15 +8,16 @@ export default function Navigation({ usePage }) {
         padding: "10px",
         display: "flex",
         width: "100%",
+        boxSizing: "border-box",
         justifyContent: "space-between",
         background: "#a6e1a6",
         alignItems: "center",
       }}
     >
-      <div style={{ margin: "10px" }}>School Vaccine Tracker</div>
-      <div style={{ margin: "10px", display: "flex" }}>
+      <div style={{ padding: "10px" }}>School Vaccine Tracker</div>
+      <div style={{ padding: "10px", display: "flex", color: "blue" }}>
         <div
-          style={{ margin: "10px", cursor: "pointer", alignSelf: "flex-end" }}
+          style={{ padding: "10px", cursor: "pointer" }}
           onClick={() => {
             usePage[1](PAGES.HOME);
           }}
@@ -24,7 +25,7 @@ export default function Navigation({ usePage }) {
           Home
         </div>
         <div
-          style={{ margin: "10px", cursor: "pointer", alignSelf: "flex-end" }}
+          style={{ padding: "10px", cursor: "pointer" }}
           onClick={() => {
             usePage[1](PAGES.STUDENT_FORM);
           }}
@@ -32,7 +33,7 @@ export default function Navigation({ usePage }) {
           Student Form
         </div>
         <div
-          style={{ margin: "10px", cursor: "pointer", alignSelf: "flex-end" }}
+          style={{ padding: "10px", cursor: "pointer" }}
           onClick={() => {
             usePage[1](PAGES.STUDENT_VACCINE_DETAILS);
           }}
