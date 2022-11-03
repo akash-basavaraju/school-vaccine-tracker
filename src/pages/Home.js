@@ -27,7 +27,7 @@ export default function Home() {
     return (
       <div
         style={{
-          height: IS_MOBILE ? "550px" : "700px",
+          height: `${window.innerHeight - 75}px`,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -42,7 +42,7 @@ export default function Home() {
     <div
       style={{
         textAlign: "center",
-        height: IS_MOBILE ? "550px" : "700px",
+        height: `${window.innerHeight - 75}px`,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

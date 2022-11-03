@@ -26,7 +26,7 @@ export default function StudentVaccineDetails() {
     return (
       <div
         style={{
-          height: IS_MOBILE ? "550px" : "700px",
+          height: `${window.innerHeight - 75}px`,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -40,7 +40,7 @@ export default function StudentVaccineDetails() {
   return (
     <div
       style={{
-        height: IS_MOBILE ? "550px" : "700px",
+        height: `${window.innerHeight - 75}px`,
         textAlign: "center",
         padding: "20px",
         lineHeight: "3",
