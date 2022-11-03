@@ -73,6 +73,7 @@ export default function VaccineDrives() {
               fontWeight: "700",
               lineHeight: "1.25",
               marginBottom: "10px",
+              textAlign: "left",
             }}
           >
             Vaccine Drive Details{" "}
