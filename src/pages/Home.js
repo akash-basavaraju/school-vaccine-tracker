@@ -68,7 +68,10 @@ export default function Home() {
         {vaccineDrives.length > 0
           ? vaccineDrives.map((vd, index) => {
               return (
-                <div style={{ padding: "0px 10px", lineHeight: "1.5" }}>
+                <div
+                  key={index}
+                  style={{ padding: "0px 10px", lineHeight: "1.5" }}
+                >
                   {index + 1}. On {vd.date}, {vd.noOfVaccinesAvailable} Vaccines
                   Available
                 </div>
