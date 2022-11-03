@@ -1,19 +1,20 @@
 import Parse from "parse/dist/parse.min.js";
 
-export async function addLandingdData() {
-  const landingdDataObj = new Parse.Object("LandingdData");
+export async function addVaccineDrive({ date, noOfVaccinesAvailable }) {
+  const vaccineDriveObj = new Parse.Object("VaccineDrives");
 
-  landingdDataObj.set("upcomingVaccineDrives", []);
+  vaccineDriveObj.set("date", date);
+  vaccineDriveObj.set("noOfVaccinesAvailable", noOfVaccinesAvailable);
 
-  await landingdDataObj.save();
+  await vaccineDriveObj.save();
 }
 
-export async function fetchLandingData() {
-  const query = new Parse.Query("LandingdData");
+export async function fetchVaccineDrives() {
+  const query = new Parse.Query("VaccineDrives");
 
-  const landingdDataObj = await query.first();
+  const vaccineDriveObj = await query.find();
 
-  return { ...landingdDataObj.attributes };
+  return vaccineDriveObj.map((data) => ({ ...data.attributes }));
 }
 
 export async function addStudentFormData(data) {

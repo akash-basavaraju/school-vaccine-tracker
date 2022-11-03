@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { fetchLandingData, fetchStudentFormData } from "../service/service";
+import { fetchStudentFormData, fetchVaccineDrives } from "../service/service";
 
 export default function Home() {
-  const [landingData, setLandinData] = useState();
+  const [vaccineDrives, setVaccineDrives] = useState();
   const [noOfStudents, setNoOfStudents] = useState();
   const [studentsVaccinated, setStudentsVaccinated] = useState();
 
   useEffect(() => {
-    const getLandingData = async () => {
-      const data = await fetchLandingData();
-      setLandinData(data);
+    const getVaccineDrives = async () => {
+      const data = await fetchVaccineDrives();
+      setVaccineDrives(data);
     };
 
-    getLandingData();
+    getVaccineDrives();
 
     const getStudentFormData = async () => {
       const data = await fetchStudentFormData();
@@ -22,7 +22,7 @@ export default function Home() {
     getStudentFormData();
   }, []);
 
-  if (!landingData) {
+  if (!vaccineDrives) {
     return (
       <div
         style={{
@@ -62,11 +62,18 @@ export default function Home() {
         {studentsVaccinated}
       </div>
       <div>
-        <span style={{ fontSize: "22px", fontWeight: "600" }}>
-          Upcoming Vaccine Drives:
-        </span>{" "}
-        {landingData.upcomingVaccineDrives.length > 0
-          ? landingData.upcomingVaccineDrives
+        <div style={{ fontSize: "22px", fontWeight: "600" }}>
+          Upcoming Vaccine Drives
+        </div>
+        {vaccineDrives.length > 0
+          ? vaccineDrives.map((vd, index) => {
+              return (
+                <div style={{ padding: "0px 5px" }}>
+                  {index !== 0 ? " ," : ""}On {vd.date}:{" "}
+                  {vd.noOfVaccinesAvailable} Vaccines Available
+                </div>
+              );
+            })
           : "No Vaccination Drives"}
       </div>
     </div>

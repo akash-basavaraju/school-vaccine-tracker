@@ -5,7 +5,6 @@ export default function Navigation({ usePage }) {
   return (
     <div
       style={{
-        padding: "10px",
         display: "flex",
         width: "100%",
         boxSizing: "border-box",
@@ -14,10 +13,10 @@ export default function Navigation({ usePage }) {
         alignItems: "center",
       }}
     >
-      <div style={{ padding: "10px" }}>School Vaccine Tracker</div>
-      <div style={{ padding: "10px", display: "flex", color: "blue" }}>
+      <div style={{ paddingLeft: "5px" }}>School Vaccine Tracker</div>
+      <div style={{ display: "flex", color: "blue" }}>
         <div
-          style={{ padding: "10px", cursor: "pointer" }}
+          style={{ padding: "5px", cursor: "pointer" }}
           onClick={() => {
             usePage[1](PAGES.HOME);
           }}
@@ -25,7 +24,7 @@ export default function Navigation({ usePage }) {
           Home
         </div>
         <div
-          style={{ padding: "10px", cursor: "pointer" }}
+          style={{ padding: "5px", cursor: "pointer" }}
           onClick={() => {
             usePage[1](PAGES.STUDENT_FORM);
           }}
@@ -33,12 +32,20 @@ export default function Navigation({ usePage }) {
           Student Form
         </div>
         <div
-          style={{ padding: "10px", cursor: "pointer" }}
+          style={{ padding: "5px", cursor: "pointer" }}
           onClick={() => {
             usePage[1](PAGES.STUDENT_VACCINE_DETAILS);
           }}
         >
           Student Vaccine Details
+        </div>
+        <div
+          style={{ padding: "5px", cursor: "pointer" }}
+          onClick={() => {
+            usePage[1](PAGES.VACCINE_DRIVES);
+          }}
+        >
+          Vaccine Drives
         </div>
       </div>
     </div>
