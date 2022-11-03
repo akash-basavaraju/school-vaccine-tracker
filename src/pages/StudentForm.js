@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { IS_MOBILE } from "../components/AppConstants";
 import { readCSV } from "../components/CSVParser";
 import { addStudentFormData } from "../service/service";
 
@@ -42,7 +43,7 @@ export default function StudentForm() {
     return (
       <div
         style={{
-          height: "600px",
+          height: IS_MOBILE ? "550px" : "700px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -57,7 +58,7 @@ export default function StudentForm() {
     <div
       style={{
         textAlign: "center",
-        height: "600px",
+        height: IS_MOBILE ? "550px" : "700px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

@@ -11,3 +11,5 @@ export const TABLE_COLUMNS = [
   { title: "Student Vaccination Status", field: "isVaccinated" },
   { title: "Student Vaccination Date", field: "vaccineDate" },
 ];
+
+export const IS_MOBILE = window.innerWidth < 480;

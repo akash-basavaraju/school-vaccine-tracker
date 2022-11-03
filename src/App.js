@@ -40,9 +40,7 @@ function App() {
   return (
     <div>
       <Navigation usePage={usePage} />
-      <div style={{ background: "aliceblue", padding: "10px" }}>
-        {getPageToRender()}
-      </div>
+      <div style={{ padding: "10px" }}>{getPageToRender()}</div>
     </div>
   );
 }

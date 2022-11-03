@@ -1,6 +1,6 @@
 import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
-import { TABLE_COLUMNS } from "../components/AppConstants";
+import { IS_MOBILE, TABLE_COLUMNS } from "../components/AppConstants";
 import { downloadCsv, makeCsv } from "../components/CSVGenerator";
 import { fetchStudentFormData } from "../service/service";
 
@@ -26,7 +26,7 @@ export default function StudentVaccineDetails() {
     return (
       <div
         style={{
-          height: "600px",
+          height: IS_MOBILE ? "550px" : "700px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -40,7 +40,7 @@ export default function StudentVaccineDetails() {
   return (
     <div
       style={{
-        height: "600px",
+        height: IS_MOBILE ? "550px" : "700px",
         textAlign: "center",
         padding: "20px",
         lineHeight: "3",

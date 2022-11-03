@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { IS_MOBILE } from "../components/AppConstants";
 import { fetchStudentFormData, fetchVaccineDrives } from "../service/service";
 
 export default function Home() {
@@ -26,7 +27,7 @@ export default function Home() {
     return (
       <div
         style={{
-          height: "600px",
+          height: IS_MOBILE ? "550px" : "700px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -41,7 +42,7 @@ export default function Home() {
     <div
       style={{
         textAlign: "center",
-        height: "600px",
+        height: IS_MOBILE ? "550px" : "700px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
