@@ -22,11 +22,11 @@ export default function StudentForm() {
     const file = document.getElementById("fileForUpload").files[0];
     const data = await readCSV(file);
     const rows = data.split("\n");
-    console.log(rows);
+
     rows.forEach(async (row, index) => {
       if (row !== "" && index !== 0) {
         const values = row.split(",");
-        console.log(values);
+
         await addStudentFormData({
           studentName: values[0],
           studentClass: values[1],

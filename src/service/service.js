@@ -4,7 +4,7 @@ export async function addVaccineDrive({ date, noOfVaccinesAvailable }) {
   const vaccineDriveObj = new Parse.Object("VaccineDrives");
 
   vaccineDriveObj.set("date", date);
-  vaccineDriveObj.set("noOfVaccinesAvailable", noOfVaccinesAvailable);
+  vaccineDriveObj.set("noOfVaccinesAvailable", Number(noOfVaccinesAvailable));
 
   await vaccineDriveObj.save();
 }
@@ -14,7 +14,20 @@ export async function fetchVaccineDrives() {
 
   const vaccineDriveObj = await query.find();
 
-  return vaccineDriveObj.map((data) => ({ ...data.attributes }));
+  return vaccineDriveObj.map((data) => ({ ...data.attributes, id: data.id }));
+}
+
+export async function updateVaccineDrive(id, data) {
+  const query = new Parse.Query("VaccineDrives");
+
+  const vaccineDriveObj = await query.get(id);
+  vaccineDriveObj.set("date", data.date);
+  vaccineDriveObj.set(
+    "noOfVaccinesAvailable",
+    Number(data.noOfVaccinesAvailable)
+  );
+
+  await vaccineDriveObj.save();
 }
 
 export async function addStudentFormData(data) {
@@ -33,5 +46,5 @@ export async function fetchStudentFormData() {
 
   const studentFormData = await query.find();
 
-  return studentFormData.map((data) => ({ ...data.attributes }));
+  return studentFormData.map((data) => ({ ...data.attributes, id: data.id }));
 }

@@ -18,7 +18,6 @@ export default function StudentVaccineDetails() {
 
   const makeAndDownloadCSV = () => {
     const csvData = makeCsv(studentFormData);
-    console.log(JSON.stringify(studentFormData));
     downloadCsv(csvData);
   };
 
