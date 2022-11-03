@@ -1,28 +1,21 @@
 import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
-import { TABLE_COLUMNS } from "../components/AppConstants";
-import { downloadCsv, makeCsv } from "../components/CSVGenerator";
-import { fetchStudentFormData } from "../service/service";
+import { VACCINE_DRIVE_COLUMNS } from "../components/AppConstants";
+import { fetchVaccineDrives } from "../service/service";
 
 export default function VaccineDrives() {
-  const [studentFormData, setStudentFormData] = useState();
+  const [vaccineDrivesData, setVaccineDrivesData] = useState();
 
   useEffect(() => {
-    const getStudentFormData = async () => {
-      const data = await fetchStudentFormData();
+    const getVaccineDrivesData = async () => {
+      const data = await fetchVaccineDrives();
 
-      setStudentFormData(data);
+      setVaccineDrivesData(data);
     };
-    getStudentFormData();
+    getVaccineDrivesData();
   }, []);
 
-  const makeAndDownloadCSV = () => {
-    const csvData = makeCsv(studentFormData);
-    console.log(JSON.stringify(studentFormData));
-    downloadCsv(csvData);
-  };
-
-  if (!studentFormData) {
+  if (!vaccineDrivesData) {
     return (
       <div
         style={{
@@ -54,16 +47,16 @@ export default function VaccineDrives() {
         }}
       >
         <div style={{ fontSize: "22px", fontWeight: "700" }}>
-          Student Vaccine Details
+          Vaccine Drive Details
         </div>
-        <button type="button" onClick={makeAndDownloadCSV}>
-          Download as CSV
+        <button type="button" onClick={() => {}}>
+          Add Vaccine Drive
         </button>
       </div>
       <MaterialTable
-        columns={TABLE_COLUMNS}
-        data={studentFormData}
-        title="Student Vaccine Details"
+        columns={VACCINE_DRIVE_COLUMNS}
+        data={vaccineDrivesData}
+        title="Vaccine Drive Details"
       />
     </div>
   );

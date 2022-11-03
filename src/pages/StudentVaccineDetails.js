@@ -1,6 +1,6 @@
 import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
-import { TABLE_COLUMNS } from "../components/AppConstants";
+import { STUDENT_TABLE_COLUMNS } from "../components/AppConstants";
 import { downloadCsv, makeCsv } from "../components/CSVGenerator";
 import { fetchStudentFormData } from "../service/service";
 
@@ -61,7 +61,7 @@ export default function StudentVaccineDetails() {
         </button>
       </div>
       <MaterialTable
-        columns={TABLE_COLUMNS}
+        columns={STUDENT_TABLE_COLUMNS}
         data={studentFormData}
         title="Student Vaccine Details"
       />
