@@ -85,6 +85,7 @@ export default function VaccineDrives() {
             type="button"
             onClick={() => {
               if (!showModal) {
+                setUpdateData();
                 setIsEditing(false);
                 setShowModel(true);
               }
