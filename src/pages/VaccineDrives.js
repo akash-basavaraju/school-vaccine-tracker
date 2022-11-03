@@ -190,6 +190,7 @@ export default function VaccineDrives() {
               <button
                 style={{ padding: "5px", margin: "10px" }}
                 onClick={() => {
+                  setUpdateData();
                   setShowModel(false);
                 }}
               >
