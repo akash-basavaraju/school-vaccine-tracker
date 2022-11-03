@@ -67,11 +67,13 @@ export default function VaccineDrives() {
             alignItems: "center",
           }}
         >
-          <div style={{ fontSize: "22px", fontWeight: "700" }}>
+          <div
+            style={{ fontSize: "22px", fontWeight: "700", lineHeight: "1.25" }}
+          >
             Vaccine Drive Details{" "}
-            <span style={{ fontSize: "20px", fontWeight: "400" }}>
+            <div style={{ fontSize: "20px", fontWeight: "400" }}>
               (click on row to edit vaccine details)
-            </span>
+            </div>
           </div>
           <button
             type="button"
@@ -116,6 +118,7 @@ export default function VaccineDrives() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            zIndex: "100",
           }}
         >
           <div
