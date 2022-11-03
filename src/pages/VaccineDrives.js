@@ -68,7 +68,10 @@ export default function VaccineDrives() {
           }}
         >
           <div style={{ fontSize: "22px", fontWeight: "700" }}>
-            Vaccine Drive Details
+            Vaccine Drive Details{" "}
+            <span style={{ fontSize: "20px", fontWeight: "400" }}>
+              (click on row to edit vaccine details)
+            </span>
           </div>
           <button
             type="button"
