@@ -52,7 +52,14 @@ export default function StudentVaccineDetails() {
           alignItems: "center",
         }}
       >
-        <div style={{ fontSize: "22px", fontWeight: "700" }}>
+        <div
+          style={{
+            fontSize: "22px",
+            fontWeight: "700",
+            lineHeight: "1.25",
+            marginBottom: "10px",
+          }}
+        >
           Student Vaccine Details
         </div>
         <button type="button" onClick={makeAndDownloadCSV}>

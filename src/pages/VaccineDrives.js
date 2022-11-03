@@ -68,7 +68,12 @@ export default function VaccineDrives() {
           }}
         >
           <div
-            style={{ fontSize: "22px", fontWeight: "700", lineHeight: "1.25" }}
+            style={{
+              fontSize: "22px",
+              fontWeight: "700",
+              lineHeight: "1.25",
+              marginBottom: "10px",
+            }}
           >
             Vaccine Drive Details{" "}
             <div style={{ fontSize: "20px", fontWeight: "400" }}>
