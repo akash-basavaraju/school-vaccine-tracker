@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PAGES } from "./components/AppConstants";
 import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
@@ -6,6 +6,7 @@ import StudentForm from "./pages/StudentForm";
 import StudentVaccineDetails from "./pages/StudentVaccineDetails";
 import Parse from "parse/dist/parse.min.js";
 import VaccineDrives from "./pages/VaccineDrives";
+import { addVaccineDrive } from "./service/service";
 
 // Your Parse initialization configuration goes here
 const PARSE_APPLICATION_ID = "yealdikNjmFTUtnmzM7qeJALvIH8XVH3V0t1Gniw";
@@ -16,6 +17,10 @@ Parse.serverURL = PARSE_HOST_URL;
 
 function App() {
   const usePage = useState(PAGES.HOME);
+
+  // useEffect(() => {
+  //   addVaccineDrive({ date: "2022-11-12", noOfVaccinesAvailable: 100 });
+  // }, []);
 
   const getPageToRender = () => {
     switch (usePage[0]) {

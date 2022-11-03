@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { IS_MOBILE } from "../components/AppConstants";
 import { readCSV } from "../components/CSVParser";
 import { addStudentFormData } from "../service/service";
 

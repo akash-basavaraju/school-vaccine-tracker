@@ -1,6 +1,6 @@
 import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
-import { IS_MOBILE, TABLE_COLUMNS } from "../components/AppConstants";
+import { TABLE_COLUMNS } from "../components/AppConstants";
 import { downloadCsv, makeCsv } from "../components/CSVGenerator";
 import { fetchStudentFormData } from "../service/service";
 
