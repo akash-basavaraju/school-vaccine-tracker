@@ -12,6 +12,8 @@ export async function addVaccineDrive({ date, noOfVaccinesAvailable }) {
 export async function fetchVaccineDrives() {
   const query = new Parse.Query("VaccineDrives");
 
+  query.ascending("date");
+
   const vaccineDriveObj = await query.find();
 
   return vaccineDriveObj.map((data) => ({ ...data.attributes, id: data.id }));

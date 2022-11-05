@@ -1,5 +1,5 @@
 import MaterialTable from "material-table";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { VACCINE_DRIVE_COLUMNS } from "../components/AppConstants";
 import {
   addVaccineDrive,
@@ -14,6 +14,13 @@ export default function VaccineDrives() {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [timestamp, setTimestamp] = useState(Date.now());
   const [updatedData, setUpdateData] = useState();
+
+  const todaysDate = useMemo(() => {
+    const today = new Date();
+    return new Date(
+      `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
+    );
+  }, []);
 
   useEffect(() => {
     const getVaccineDrivesData = async () => {
@@ -100,16 +107,24 @@ export default function VaccineDrives() {
           title="Vaccine Drive Details"
           onRowClick={(event, rowData) => {
             if (!showModal) {
-              const uData = {
-                date: vaccineDrivesData[rowData.tableData.id].date,
-                noOfVaccinesAvailable:
-                  vaccineDrivesData[rowData.tableData.id].noOfVaccinesAvailable,
-              };
+              if (
+                new Date(vaccineDrivesData[rowData.tableData.id].date) >=
+                todaysDate
+              ) {
+                const uData = {
+                  date: vaccineDrivesData[rowData.tableData.id].date,
+                  noOfVaccinesAvailable:
+                    vaccineDrivesData[rowData.tableData.id]
+                      .noOfVaccinesAvailable,
+                };
 
-              setUpdateData(uData);
-              setSelectedIndex(rowData.tableData.id);
-              setIsEditing(true);
-              setShowModel(true);
+                setUpdateData(uData);
+                setSelectedIndex(rowData.tableData.id);
+                setIsEditing(true);
+                setShowModel(true);
+              } else {
+                alert("Selected Vaccine Drive is already passed.");
+              }
             }
           }}
         />
@@ -152,9 +167,13 @@ export default function VaccineDrives() {
                 type="date"
                 value={updatedData?.date ? updatedData.date : ""}
                 onChange={(e) => {
-                  setUpdateData((prev = {}) => {
-                    return { ...prev, date: e.target.value };
-                  });
+                  if (new Date(e.target.value) >= todaysDate) {
+                    setUpdateData((prev = {}) => {
+                      return { ...prev, date: e.target.value };
+                    });
+                  } else {
+                    alert("Please add the future vaccine drives");
+                  }
                 }}
               />
             </div>
