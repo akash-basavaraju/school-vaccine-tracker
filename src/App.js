@@ -4,15 +4,15 @@ import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import StudentForm from "./pages/StudentForm";
 import StudentVaccineDetails from "./pages/StudentVaccineDetails";
-import Parse from "parse/dist/parse.min.js";
+// import Parse from "parse/dist/parse.min.js";
 import VaccineDrives from "./pages/VaccineDrives";
 
 // Your Parse initialization configuration goes here
-const PARSE_APPLICATION_ID = "yealdikNjmFTUtnmzM7qeJALvIH8XVH3V0t1Gniw";
-const PARSE_HOST_URL = "https://parseapi.back4app.com";
-const PARSE_JAVASCRIPT_KEY = "mx3ULBhrpJNNvCkFpGXSN0wC37LbZMvNSJ6HM6gV";
-Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
-Parse.serverURL = PARSE_HOST_URL;
+// const PARSE_APPLICATION_ID = "yealdikNjmFTUtnmzM7qeJALvIH8XVH3V0t1Gniw";
+// const PARSE_HOST_URL = "https://parseapi.back4app.com";
+// const PARSE_JAVASCRIPT_KEY = "mx3ULBhrpJNNvCkFpGXSN0wC37LbZMvNSJ6HM6gV";
+// Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
+// Parse.serverURL = PARSE_HOST_URL;
 
 function App() {
   const usePage = useState(PAGES.HOME);

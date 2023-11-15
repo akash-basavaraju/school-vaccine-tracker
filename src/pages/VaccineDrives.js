@@ -35,7 +35,7 @@ export default function VaccineDrives() {
     if (!isEdit) {
       await addVaccineDrive(data);
     } else {
-      await updateVaccineDrive(vaccineDrivesData[editIndex].id, data);
+      await updateVaccineDrive(vaccineDrivesData[editIndex].vId, data);
     }
     setTimestamp(Date.now());
     setShowModel(false);
